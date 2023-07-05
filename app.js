@@ -3,8 +3,9 @@ let paragraph1 =
   "Hail traveller! Pull up a stool and warm yourself by the fire";
 let paragraph2 = "Paragraph 2 - Click to continue...";
 let paragraph3 = "Paragraph 3.";
-let paragraph4 = "Enter your name";
+let paragraph4 = "Enter your name:";
 let textBox = document.getElementById("textBox");
+let nameForm = document.getElementById("nameForm").value;
 document.getElementById("nameForm").style.display = "none";
 
 function nextParagraph() {
@@ -25,4 +26,8 @@ function nextParagraph() {
   //   }
 }
 
+let firstName = document.getElementById("firstName");
+console.log(firstName);
+
 textBox.addEventListener("click", nextParagraph);
+console.log(nameForm);
