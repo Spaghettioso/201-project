@@ -1,0 +1,45 @@
+/* * {
+  box-sizing: border-box;
+} */
+
+body {
+  background: url("../images/tavern-background-blurred.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  /* margin: 20%; */
+}
+
+#container {
+  /* display: flex;
+  flex-direction: column;
+  margin: auto; */
+}
+
+#bartender {
+  float: right;
+  margin-left: auto;
+  margin-right: 10%;
+  margin-top: 5%;
+  width: 40%;
+  height: 50%;
+}
+
+#textBox {
+  /* background-color: black;
+  color: white;
+  width: 30%;
+  height: 300px; */
+}
+
+#textBox {
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
