@@ -4,14 +4,16 @@ let paragraph1 =
 let paragraph2 = "Paragraph 2 - Click to continue...";
 let paragraph3 = "Paragraph 3.";
 let paragraph4 = "Enter your name:";
-let paragraph5 = "To choose your s";
+let paragraph5 = "Choose your race:";
+let paragraph6 = "choose your stats";
 let textBox = document.getElementById("textBox");
 let nameForm = document.getElementById("nameForm");
 let statForm = document.getElementById("statForm");
+let textElement = document.getElementById("text");
+let raceForm = document.getElementById("raceForm");
+
 console.log(nameForm);
 function nextParagraph() {
-  let textElement = document.getElementById("text");
-
   if (textElement.textContent === paragraph1) {
     textElement.textContent = paragraph2;
   } else if (textElement.textContent === paragraph2) {
@@ -29,24 +31,49 @@ function nameFunction(event) {
   let lastNameValue = event.target.lastName.value;
   console.log(firstNameValue + lastNameValue);
   document.getElementById("nameForm").style.display = "none";
-  document.getElementById("statForm").style.display = "table";
+  document.getElementById("raceForm").style.display = "table";
+  textElement.textContent = paragraph5;
   //create a varible for firstname + last name called charName then store it in local storage
+}
+
+function raceFunction(event) {
+  event.preventDefault();
+  let humanValue = event.target.human.value;
+  let dwarfValue = event.target.dwarf.value;
+  let elfValue = event.target.elf.value;
+  document.getElementById("raceForm").style.display = "none";
+  document.getElementById("statForm").style.display = "table";
+  textElement.textContent = paragraph6;
+}
+
+function classFunction(event) {
+  event.preventDefault();
+  let fighterValue = event.target.fighter.value;
+  let RogueValue = event.target.rogue.value;
+  let clericValue = event.target.cleric.value;
+  let wizardValue = event.target.wizard.value;
+  let sorcererValue = event.target.sorcerer.value;
+  document.getElementById("classForm").style.display = "none";
+  document.getElementById("statForm").style.display = "table";
 }
 
 function statFunction(event) {
   event.preventDefault();
   let strValue = event.target.strength.value;
-  // let agiValue = event.target.agility.value;
+  let dexValue = event.target.dexterity.value;
   let conValue = event.target.constitution.value;
   let intValue = event.target.intelligence.value;
   let wisValue = event.target.wisdom.value;
   let chaValue = event.target.charisma.value;
 
-  document.getElementById("statForm").style.display = "none";
+  document.getElementById("textBox").style.display = "none";
+  document.getElementById("scroll").style.display = "inline";
 }
 
 let firstName = document.getElementById("firstName");
 
 textBox.addEventListener("click", nextParagraph);
 nameForm.addEventListener("submit", nameFunction);
+raceForm.addEventListener("submit", raceFunction);
+classForm.addEventListener("submit", classFunction);
 statForm.addEventListener("submit", statFunction);
