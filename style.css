@@ -43,3 +43,16 @@ h1 {
   color: white;
   text-align: center;
 }
+
+#nameForm {
+  display: none;
+}
+
+#statForm {
+  display: none;
+}
+
+.stat {
+  margin: 2px;
+  :center ;
+}
